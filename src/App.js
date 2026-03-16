@@ -114,8 +114,7 @@ export default function App() {
     ? (parseFloat(s.totalCredits) || 0)
     : s.courses.reduce((acc, c) => acc + (parseFloat(c.credit) || 0), 0);
 
-  const currentSGPA    = calcSGPA(courses);
-  const currentCredits = courses.reduce((acc, c) => acc + (parseFloat(c.credit) || 0), 0);
+  const currentSGPA = calcSGPA(courses);
 
   // Valid previous = has both SGPA > 0 and Credits > 0
   const validPrev    = prevSems.filter(s => getSemSGPA(s) > 0 && getSemCredits(s) > 0);
